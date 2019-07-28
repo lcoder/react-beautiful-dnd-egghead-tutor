@@ -30,6 +30,7 @@ export default class Column extends React.Component {
             <Title>{ this.props.column.title }</Title>
             <Droppable
                 droppableId={ this.props.column.id }
+                isDropDisabled={ this.props.isDropDisabled }
             >
                 {
                     ( provided , snapshot ) => (
