@@ -12,14 +12,6 @@ const Container = styled.div`
     display: flex;
 `
 
-const Handle = styled.div`
-    width: 20px;
-    height: 20px;
-    background-color: orange;
-    border-radius: 4px;
-    margin-right: 8px;
-`
-
 
 export default class Task extends React.PureComponent {
     render(){
@@ -31,12 +23,10 @@ export default class Task extends React.PureComponent {
                 ( provided , snapshot ) => (
                     <Container
                         { ...provided.draggableProps }
+                        { ...provided.dragHandleProps }
                         ref={ provided.innerRef }
                         isDragging={ snapshot.isDragging }
                     >
-                        <Handle
-                            { ...provided.dragHandleProps }
-                        />
                         { this.props.task.content }
                     </Container>
                 )
